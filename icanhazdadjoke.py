@@ -15,13 +15,13 @@ def main():
 
     num_of_jokes = data['total_jokes']
 
-    if num_of_jokes > 0:
-        print(f"i've found {num_of_jokes} jokes about cats: ")
+    if num_of_jokes == 1:
+        print(f"i've found {num_of_jokes} joke about {search_term}: ")
+        print(f"{data['joke']}")
+    elif num_of_jokes > 1:
+        print(f"i've found {num_of_jokes} jokes about {search_term}: ")
         for i in range(num_of_jokes):
             print(f"{data['results'][i]['joke']}")
-    if num_of_jokes == 1:
-        print(f"i've found {num_of_jokes} joke about cats: ")
-        print(f"{data['joke']}")
     else:
         print(f"This is what yout get with an inappropriate search... {num_of_jokes}")
 
